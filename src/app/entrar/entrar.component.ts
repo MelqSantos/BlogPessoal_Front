@@ -40,7 +40,7 @@ export class EntrarComponent implements OnInit {
       if(erro.status == 500){
         alert('Usuário ou senha incorretos!')
       } if(erro.status == 401){
-        alert('Usuário não autorizado!')
+        alert('Usuário ou senha incorretos!')
       }
     })
   }

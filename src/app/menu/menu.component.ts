@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-menu',
@@ -15,6 +16,9 @@ export class MenuComponent {
       map(result => result.matches),
       shareReplay()
     );
+
+    nome = environment.nome;
+    foto = environment.foto;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
