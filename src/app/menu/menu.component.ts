@@ -22,4 +22,7 @@ export class MenuComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  ngOnInit(){
+  }
+
 }
