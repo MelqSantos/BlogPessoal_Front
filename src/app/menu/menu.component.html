@@ -1,4 +1,4 @@
-<mat-sidenav-container id="sidebar" class="sidenav-container">
+<mat-sidenav-container *ngIf="authService.logado()" id="sidebar" class="sidenav-container">
     <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
         <div class="perfil w-100 d-flex justify-content-center">
             <div class="foto">
@@ -16,7 +16,7 @@
             <a class="border-custom" mat-list-item href="#">
                 <mat-icon class="mr-2">account_box</mat-icon> Sobre
             </a>
-            <a class="border-custom" mat-list-item href="#">
+            <a (click)="sair()" class="border-custom" mat-list-item href="#">
                 <mat-icon class="mr-2">logout</mat-icon>Sair
             </a>
             <a mat-list-item href="#">
@@ -51,6 +51,7 @@
         </mat-toolbar>
         <!-- Conteúdo do blog -->
         <app-feed></app-feed>
+        <app-rodape></app-rodape>
         <!-- Fim do conteúdo do blog -->
 
     </mat-sidenav-content>

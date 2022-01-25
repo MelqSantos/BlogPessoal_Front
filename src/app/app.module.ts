@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common'; 
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
-import { FeedComponent } from './feed/feed.component'; 
+import { FeedComponent } from './feed/feed.component';
+import { TemasComponent } from './temas/temas.component'; 
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { FeedComponent } from './feed/feed.component';
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
-    FeedComponent
+    FeedComponent,
+    TemasComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +48,14 @@ import { FeedComponent } from './feed/feed.component';
     MatFormFieldModule,
     MatTooltipModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+  //   {
+  //   provide: LocationStrategy,
+  //   useClass: HashLocationStrategy
+  // }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

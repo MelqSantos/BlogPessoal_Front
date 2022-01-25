@@ -1,15 +1,11 @@
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-* :not(mat-icon) {
-    font-family: 'Poppins', sans-serif !important;
-}
-
 .sidenav-container {
     height: 100%;
 }
 
 .sidenav {
     width: 260px;
-    border-right: 2px solid rgba(255, 255, 255, .8) !important;
+    border-right: 1px solid rgba(255, 255, 255, .8) !important;
 }
 
 .sidenav .mat-toolbar {
@@ -17,7 +13,7 @@
 }
 
 .mat-toolbar.mat-primary {
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 1;
 }
