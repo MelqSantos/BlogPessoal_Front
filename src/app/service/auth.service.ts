@@ -18,20 +18,18 @@ export class AuthService {
    
    // Observable garante que o Userlogin irá receber um Objeto do Tipo UserLogin
   entrar(userLogin: UserLogin): Observable<UserLogin>{
-    return this.http.post<UserLogin>('https://ms-blog-pessoal.herokuapp.com/usuarios/logar', userLogin)
+    return this.http.post<UserLogin>('http://localhost:8080/usuarios/logar', userLogin)
   }
 
   cadastrar(user: User):Observable<User>{
-    return this.http.post<User>('https://ms-blog-pessoal.herokuapp.com/usuarios/cadastrar', user)
+    return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user)
   }
 
   logado(){
-    let ok: boolean = false;
+    let ok: boolean = false
 
     if(environment.token != ''){
-      ok = true;
-    } else{
-      this.router.navigate(['/entrar']);
+      ok = true
     }
 
     return ok

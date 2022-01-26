@@ -36,7 +36,7 @@ export class EntrarComponent implements OnInit {
       console.log("foto: " + environment.foto)
       console.log("token: " + environment.token)
 
-      this.router.navigate(['/menu'])
+      this.router.navigate(['/feed'])
     }, erro => {
       // tratamento de erros
       if(erro.status == 500){

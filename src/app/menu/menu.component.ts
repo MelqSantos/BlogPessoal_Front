@@ -29,10 +29,10 @@ export class MenuComponent {
     ) {}
 
   ngOnInit(){
-    if(environment.token == ''){
-      alert('Sua Seção expirou, faça o login novamente.')
-      this.router.navigate(['/entrar'])
-    }
+    // if(environment.token == ''){
+    //   alert('Sua Seção expirou, faça o login novamente.')
+    //   this.router.navigate(['/entrar'])
+    // }
   }
 
   sair(){
