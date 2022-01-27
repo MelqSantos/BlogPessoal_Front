@@ -1,5 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+    --color-primary: #343A40;
+    --gradient-blue: linear-gradient(to right, #0099FF, #5B86E5);
+}
+
 html,
 body {
     height: 100%;

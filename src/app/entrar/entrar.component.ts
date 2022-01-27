@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from 'src/model/UserLogin';
@@ -29,7 +29,7 @@ export class EntrarComponent implements OnInit {
       environment.token = this.userLogin.token
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
-      environment.id = this.userLogin.id  
+      environment.id = this.userLogin.id
 
       this.router.navigate(['/feed'])
     }, erro => {

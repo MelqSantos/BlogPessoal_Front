@@ -11,12 +11,10 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
 
-  foto = environment.foto;
-  nome = environment.nome;
-  
+
   constructor(
     public auth: AuthService,
-    private router: Router
+    private router: Router,
   ){}
 
   ngOnInit(){
