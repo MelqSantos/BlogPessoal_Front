@@ -17,25 +17,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Componentes
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { TemasComponent } from './temas/temas.component';
-import { NavbarComponent } from './navbar/navbar.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
     RodapeComponent,
     EntrarComponent,
     CadastrarComponent,
     FeedComponent,
     TemasComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,

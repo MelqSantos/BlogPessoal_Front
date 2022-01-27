@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { AuthService } from './service/auth.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import { AuthService } from './service/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  foto = environment.foto;
+  nome = environment.nome;
   
   constructor(
     public auth: AuthService,
@@ -16,9 +20,26 @@ export class AppComponent {
   ){}
 
   ngOnInit(){
+    window.scroll(0, 0);
+
+    // Validação de usuário logado
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
   }
 
+  // Função para limpar os dados do usuário e deslogar
+  sair(){
+    this.router.navigate(['/entrar'])
+    environment.token = '';
+    environment.foto = '';
+    environment.id = 0;
+    environment.nome = '';
+  }
+
+  // Togle menu lateral
+  toggle(){
+    $('#sidebar').toggleClass('active');
+  }
+  
 }
