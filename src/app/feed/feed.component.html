@@ -4,12 +4,12 @@
         <div class="col-md-6 mt-4">
             <div class="titulo">
                 <h1>Seja bem vindo(a)!</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, ipsa.</p>
+                <p>Compartilhe aqui seus pensamentos e opiniões!</p>
             </div>
 
             <div class="mt-4">
                 <div class="titulo">
-                    <h2>Olá, Fulano</h2>
+                    <h2>Olá, {{nome}}</h2>
                     <p>No que está pensando hoje?</p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                     <a class="nav-link active" id="allPosts" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">Todas as postagens</a>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="myPosts" data-toggle="tab" href="#my" role="tab" aria-controls="my" aria-selected="false">Minhas postagens</a>
+                    <a (click)="findByIdUser()" class="nav-link" id="myPosts" data-toggle="tab" href="#my" role="tab" aria-controls="my" aria-selected="false">Minhas postagens</a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="nav-link" id="themePosts" data-toggle="tab" href="#themes" role="tab" aria-controls="themes" aria-selected="false">Postagens por tema</a>
@@ -53,151 +53,120 @@
             </ul>
 
             <div class="tab-content" id="myTabContent">
+
+                <!-- Início todas as postagens -->
                 <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="allPosts">
 
                     <!-- Início da 1° postagem -->
-                    <div class="row mt-2 px-2 d-flex align-items-center post articles">
+                    <div class="postagem" *ngFor="let item of listaPostagens">
+                        <div class="row mt-2 px-2 d-flex align-items-center post articles">
 
-                        <div class="col-md-3">
-                            <img class="post-content" src="/assets/imagens/backgrounds/home.jpg">
-                        </div>
-
-                        <div class="col-md-9">
-
-                            <h2 class="mb-1">Como se adaptar ao Home Office?</h2>
-                            <!-- Início das informações da postagem -->
-                            <div class="info d-flex">
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">color_lens</mat-icon>Estresse
-                                </div>
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">access_time_filled</mat-icon>19:26 - 18/01/2022
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <mat-icon class="mr-2">account_box</mat-icon>Melqui Santos
-                                </div>
-                            </div>
-                            <!-- Fim das informações da postagem -->
-
-                            <div class="msg">
-                                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, vel, eius ducimus maiores rerum sed similique consequatur possimus, eligendi illum beatae reiciendis reprehenderit. Dolore maxime veniam omnis, totam commodi
-                                    laudantium?
-                                </p>
+                            <div class="col-md-3">
+                                <img class="post-content" src="{{item.fotoPost}}">
                             </div>
 
+                            <div class="col-md-9">
+
+                                <h2 class="mb-1">{{item.titulo}}</h2>
+                                <!-- Início das informações da postagem -->
+                                <div class="info d-flex">
+                                    <div class="d-flex align-items-center mr-5">
+                                        <mat-icon class="mr-2">color_lens</mat-icon>{{item.tema.descricao}}
+                                    </div>
+                                    <div class="d-flex align-items-center mr-5">
+                                        <mat-icon class="mr-2">event</mat-icon>{{item.data | date: 'dd/MM/yyyy'}}
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <mat-icon class="mr-2">account_box</mat-icon>{{item.usuario.nome}}
+                                    </div>
+                                </div>
+                                <!-- Fim das informações da postagem -->
+
+                                <div class="msg">
+                                    <p class="mt-3">{{item.texto}}</p>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                     <!-- Fim da 1° postagem -->
 
-                    <!-- Início da 2° postagem -->
-                    <div class="row mt-2 px-2 d-flex align-items-center post articles">
-
-                        <div class="col-md-3">
-                            <img class="post-content" src="/assets/imagens/backgrounds/office.jpg">
-                        </div>
-
-                        <div class="col-md-9">
-
-                            <h2 class="mb-1">Lorem ipsum dolor sit amet consectetur?</h2>
-                            <!-- Início das informações da postagem -->
-                            <div class="info d-flex">
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">color_lens</mat-icon>Estresse
-                                </div>
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">access_time_filled</mat-icon>19:26 - 18/01/2022
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <mat-icon class="mr-2">account_box</mat-icon>Melqui Santos
-                                </div>
-                            </div>
-                            <!-- Fim das informações da postagem -->
-
-                            <div class="msg">
-                                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, vel, eius ducimus maiores rerum sed similique consequatur possimus, eligendi illum beatae reiciendis reprehenderit. Dolore maxime veniam omnis, totam commodi
-                                    laudantium?
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!-- Fim da 2° postagem -->
-
                 </div>
+                <!-- Fim todas as postagens -->
+
+                <!-- Início minhas postagens-->
                 <div class="tab-pane fade" id="my" role="tabpanel" aria-labelledby="myPosts">
 
-                    <!-- Início da 2° postagem -->
-                    <div class="row mt-2 px-2 d-flex align-items-center post articles">
+                    <div class="postagem" *ngFor="let item of user.postagem">
+                        <div class="row mt-2 px-2 d-flex align-items-center post articles">
 
-                        <div class="col-md-3">
-                            <img class="post-content" src="/assets/imagens/backgrounds/office.jpg">
-                        </div>
-
-                        <div class="col-md-9">
-
-                            <h2 class="mb-1">Lorem ipsum dolor sit amet consectetur?</h2>
-                            <!-- Início das informações da postagem -->
-                            <div class="info d-flex">
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">color_lens</mat-icon>Estresse
-                                </div>
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">access_time_filled</mat-icon>19:26 - 18/01/2022
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <mat-icon class="mr-2">account_box</mat-icon>Melqui Santos
-                                </div>
-                            </div>
-                            <!-- Fim das informações da postagem -->
-
-                            <div class="msg">
-                                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, vel, eius ducimus maiores rerum sed similique consequatur possimus, eligendi illum beatae reiciendis reprehenderit. Dolore maxime veniam omnis, totam commodi
-                                    laudantium?
-                                </p>
+                            <div class="col-md-3">
+                                <img class="post-content" src="{{item.fotoPost}}">
                             </div>
 
+                            <div class="col-md-9">
+
+                                <h2 class="mb-1">{{item.titulo}}</h2>
+                                <!-- Início das informações da postagem -->
+                                <div class="info d-flex">
+                                    <div class="d-flex align-items-center mr-5">
+                                        <mat-icon class="mr-2">color_lens</mat-icon>{{item.tema.descricao}}
+                                    </div>
+                                    <div class="d-flex align-items-center mr-5">
+                                        <mat-icon class="mr-2">event</mat-icon>{{item.data | date: 'dd/MM/yyyy'}}
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <mat-icon class="mr-2">account_box</mat-icon>{{nome}}
+                                    </div>
+                                </div>
+
+                                <div class="msg">
+                                    <p class="mt-3">{{item.texto}}</p>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                    <!-- Fim da 2° postagem -->
 
                 </div>
+                <!-- Fim minhas postagens-->
+
+                <!-- Início postagens por tema -->
                 <div class="tab-pane fade" id="themes" role="tabpanel" aria-labelledby="themePosts">
 
-                    <!-- Início da 1° postagem -->
-                    <div class="row mt-2 px-2 d-flex align-items-center post articles">
+                    <div *ngFor='let tema of listaTemas'>
+                        <div class="postagem" *ngFor="let item of tema.postagem">
+                            <div class="row mt-2 px-2 d-flex align-items-center post articles">
 
-                        <div class="col-md-3">
-                            <img class="post-content" src="/assets/imagens/backgrounds/home.jpg">
-                        </div>
-
-                        <div class="col-md-9">
-
-                            <h2 class="mb-1">Como se adaptar ao Home Office?</h2>
-                            <!-- Início das informações da postagem -->
-                            <div class="info d-flex">
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">color_lens</mat-icon>Estresse
+                                <div class="col-md-3">
+                                    <img class="post-content" src="{{item.fotoPost}}">
                                 </div>
-                                <div class="d-flex align-items-center mr-5">
-                                    <mat-icon class="mr-2">access_time_filled</mat-icon>19:26 - 18/01/2022
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <mat-icon class="mr-2">account_box</mat-icon>Melqui Santos
+
+                                <div class="col-md-9">
+
+                                    <h2 class="mb-1">{{item.titulo}}</h2>
+                                    <!-- Início das informações da postagem -->
+                                    <div class="info d-flex">
+                                        <div class="d-flex align-items-center mr-5">
+                                            <mat-icon class="mr-2">event</mat-icon>{{item.data | date: 'dd/MM/yyyy'}}
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <mat-icon class="mr-2">account_box</mat-icon>{{item.usuario.nome}}
+                                        </div>
+                                    </div>
+
+                                    <div class="msg">
+                                        <p class="mt-3">{{item.texto}}</p>
+                                    </div>
+
                                 </div>
                             </div>
-                            <!-- Fim das informações da postagem -->
-
-                            <div class="msg">
-                                <p class="mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur, vel, eius ducimus maiores rerum sed similique consequatur possimus, eligendi illum beatae reiciendis reprehenderit. Dolore maxime veniam omnis, totam commodi
-                                    laudantium?
-                                </p>
-                            </div>
-
                         </div>
                     </div>
-                    <!-- Fim da 1° postagem -->
 
                 </div>
+                <!-- Fim postagens por tema -->
+
             </div>
         </div>
     </div>
@@ -222,31 +191,31 @@
 
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input type="text" class="form-control" id="titulo" placeholder="Titulo da postagem">
+                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Titulo da postagem">
                 </div>
 
                 <div class="form-group">
                     <label for="texto">Texto</label>
-                    <textarea class="form-control" name="text" id="texto " rows="3" placeholder="Conteúdo da postagem"></textarea>
+                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="text" id="texto " rows="3" placeholder="Conteúdo da postagem"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="foto">Capa da postagem</label>
-                    <input type="text" class="form-control" id="foto" placeholder="URL da foto">
+                    <input [(ngModel)]="postagem.fotoPost" type="text" class="form-control" id="foto" placeholder="URL da foto">
                 </div>
 
                 <div class="form-group">
-                    <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/temas"> cadastre um novo</a></label>
-                    <select class="form-control" name="tema">
-              <option value="">Temas</option>
-          </select>
+                    <label (change)="findByIdTema()" for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink="/temas"> cadastre um novo</a></label>
+                    <select class="form-control" id="tema" name="tema" [(ngModel)]="idTema">
+                        <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
+                    </select>
                 </div>
 
 
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-custom text-white" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn text-white">Publicar</button>
+                <button type="button" class="btn text-white" data-dismiss="modal" (click)="publicar()">Publicar</button>
             </div>
         </div>
     </div>
