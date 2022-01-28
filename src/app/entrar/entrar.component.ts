@@ -31,6 +31,8 @@ export class EntrarComponent implements OnInit {
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
 
+      console.log(environment.token)
+
       this.router.navigate(['/feed'])
     }, erro => {
       // tratamento de erros
