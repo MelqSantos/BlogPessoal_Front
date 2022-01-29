@@ -1,1 +1,67 @@
-<p>user-edit works!</p>
+<div class="container my-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8 titulo">
+            <h1>Atualizar perfil</h1>
+        </div>
+
+        <div class="col-md-8 pb-4">
+            <form>
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.nome" placeholder="Nome e sobrenome">
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="usuario">E-mail</label>
+                        <input type="email" class="form-control" id="usuario" name="usuario" placeholder="email@email.com" [(ngModel)]="user.usuario">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="perfil">Perfil</label>
+                        <select (change)="tipoUser($event)" id="perfil" name="perfil" class="custom-select">
+                            <option selected>Selecione</option>
+                            <option value="usu">Usuário</option>
+                            <option value="adm">Administrador</option>
+                          </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fotoUrl">Foto de perfil</label>
+                    <input [(ngModel)]="user.foto" type="text" class="form-control" id="fotoUrl" name="fotoUrl" placeholder="URL da foto">
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="senha">Senha</label>
+                        <input (input)="confirmSenha($event)" type="password" class="form-control" id="senha" name="senha" placeholder="Senha de 8 dígitos">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="confSenha">Confirmar senha</label>
+                        <input type="password" class="form-control" id="confSenha" name="confSenha" [(ngModel)]="user.senha">
+                    </div>
+                </div>
+
+                <div class="botoes row mt-4">
+
+                    <div class="col-md-6">
+                        <button (click)="atualizar()" type="submit" class="btn d-flex align-items-center justify-content-center">
+                            <mat-icon class="mr-2">sync</mat-icon>Atualizar
+                        </button>
+                    </div>
+
+                    <div class="col-md-6">
+                        <button routerLink='/feed' type="submit" class="btn btn-custom d-flex align-items-center justify-content-center">
+                            <mat-icon class="mr-2">clear</mat-icon>Cancelar
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

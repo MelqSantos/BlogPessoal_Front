@@ -45,6 +45,7 @@ export class AppComponent {
     $('#sidebar').toggleClass('active');
   }
 
+  // Função que busca os dados do usuário e insere no menu lateral.
   usuarioLogado(){
     if(environment.token != ''){
       
@@ -54,7 +55,6 @@ export class AppComponent {
 
       $('#nameUser').html(this.usuario.nome);
       $('#user').css("background-image", "url(" + this.usuario.foto + ")");
-
     }
   }
   

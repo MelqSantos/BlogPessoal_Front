@@ -17,12 +17,6 @@ export class AuthService {
       headers: new HttpHeaders().set('Authorization', environment.token)
     }
 
-    // public usuario = {
-    //   id: 0,
-    //   nome: '',
-    //   foto: ''
-    // }
-
     refreshToken(){
       this.token = {
         headers: new HttpHeaders().set('Authorization', environment.token)
@@ -42,20 +36,11 @@ export class AuthService {
   return this.http.get<User>(`https://ms-blogpessoal.herokuapp.com/usuarios/${id}`, this.token)
   }
 
-  // public refreshUsu(){
-  //   this.usuario.id = environment.id
-  //   this.usuario.nome = environment.nome
-  //   this.usuario.foto = environment.foto
-
-  //   return this.usuario
-  // }
-
   logado(){
     let ok: boolean = false
 
     if(environment.token != ''){
       ok = true
-      // this.refreshUsu()
     }
 
     return ok
