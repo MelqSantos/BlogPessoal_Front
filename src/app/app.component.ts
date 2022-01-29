@@ -11,6 +11,11 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
 
+  usuario = {
+    id: 0,
+    nome : '',
+    foto : ''
+  }
 
   constructor(
     public auth: AuthService,
@@ -23,7 +28,7 @@ export class AppComponent {
     // Validação de usuário logado
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
-    }
+    } 
   }
 
   // Função para limpar os dados do usuário e deslogar
@@ -38,6 +43,19 @@ export class AppComponent {
   // Togle menu lateral
   toggle(){
     $('#sidebar').toggleClass('active');
+  }
+
+  usuarioLogado(){
+    if(environment.token != ''){
+      
+      this.usuario.id = environment.id
+      this.usuario.nome = environment.nome
+      this.usuario.foto = environment.foto
+
+      $('#nameUser').html(this.usuario.nome);
+      $('#user').css("background-image", "url(" + this.usuario.foto + ")");
+
+    }
   }
   
 }

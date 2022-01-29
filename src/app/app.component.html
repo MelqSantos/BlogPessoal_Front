@@ -1,6 +1,5 @@
-<div class="wrapper">
+<div class="wrapper" (mouseover)='usuarioLogado()'>
     <!-- Sidebar  -->
-    <!-- <nav *ngIf='auth.logado()' id="sidebar"> -->
     <nav *ngIf='auth.logado()' id="sidebar">
         <div class="sidebar-header">
 
@@ -9,7 +8,7 @@
                 <div class="card-img-overlay">
                     <div class="profile d-flex flex-column align-items-center justify-content-center">
                         <div id="user"></div>
-                        <h4 id="nameUser" class="card-title mt-2">Melqui (Provisório)</h4>
+                        <h4 id="nameUser" class="card-title mt-2">...</h4>
                     </div>
                 </div>
             </div>
@@ -54,7 +53,6 @@
     <!-- Page Content  -->
     <div id="content">
 
-        <!-- <nav *ngIf='auth.logado()' class="navbar navbar-expand-lg navbar-light bg-light"> -->
         <nav *ngIf='auth.logado()' class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
 
