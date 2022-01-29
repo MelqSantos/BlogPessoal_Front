@@ -48,7 +48,7 @@ export class UserEditComponent implements OnInit {
         alert('As senhas não coincidem.')
 
       }else{
-        this.authService.cadastrar(this.user).subscribe((resp: User) => {
+        this.authService.atualizar(this.user).subscribe((resp: User) => {
           this.user = resp;
           
           alert('Usuário atualizado com sucesso, faça o login novamente!')

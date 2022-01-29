@@ -34,6 +34,7 @@ export class AppComponent {
   // Função para limpar os dados do usuário e deslogar
   sair(){
     this.router.navigate(['/entrar'])
+    alert('Usuário deslogado com sucesso!')
     environment.token = '';
     environment.foto = '';
     environment.id = 0;
