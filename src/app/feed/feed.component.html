@@ -124,6 +124,9 @@
                                     <p class="mt-3">{{item.texto}}</p>
                                 </div>
 
+                                <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3"><i class="fas fa-edit mr-2"></i>Editar</a>
+                                <a [routerLink]="['/postagem-delete', item.id]" class="text-danger"><i class="fas fa-trash-alt mr-2"></i>Apagar</a>
+
                             </div>
                         </div>
                     </div>

@@ -18,3 +18,8 @@ body {
 * :not(mat-icon, i) {
     font-family: 'Poppins', sans-serif !important;
 }
+
+.btn-custom {
+    background: linear-gradient(to right, #FF725E, #C53F3F) !important;
+    border: none !important;
+}
