@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from 'ngx-bootstrap/modal';
 // import { HashLocationStrategy, LocationStrategy } from '@angular/common'; 
 
 // Componentes
@@ -27,6 +28,7 @@ import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component'
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     PostagemEditComponent,
     PostagemDeleteComponent,
     UserEditComponent,
+    AlertasComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component';
     MatTooltipModule,
     HttpClientModule,
     FormsModule,
+    ModalModule.forRoot()
   ],
   providers: [
   //   {

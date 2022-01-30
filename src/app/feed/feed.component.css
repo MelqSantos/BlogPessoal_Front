@@ -52,3 +52,9 @@
 .nav-tabs .nav-item .nav-link.active {
     opacity: 1;
 }
+
+#all,
+#my,
+#themes {
+    min-height: 50vh;
+}

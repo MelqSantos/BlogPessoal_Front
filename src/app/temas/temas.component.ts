@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from 'src/model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -16,10 +17,13 @@ export class TemasComponent implements OnInit {
 
   constructor(
     public router: Router,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private alerta: AlertasService
   ) { }
 
   ngOnInit(){
+    window.scroll(0, 0)
+    
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
@@ -36,7 +40,7 @@ export class TemasComponent implements OnInit {
   cadastrar(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp;
-      alert('Tema cadastrado com sucesso!')
+      this.alerta.showAlertSuccess('Tema cadastrado com sucesso!')
       this.finAllTemas()
       this.tema = new Tema()
     })

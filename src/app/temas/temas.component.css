@@ -1,3 +1,7 @@
 #bg-tema {
     background-color: #343A40;
 }
+
+#content {
+    min-height: 50vh;
+}

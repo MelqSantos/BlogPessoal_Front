@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { AuthService } from './service/auth.service';
+import { AlertasService } from './service/alertas.service';
 import * as $ from 'jquery';
 
 @Component({
@@ -20,6 +21,7 @@ export class AppComponent {
   constructor(
     public auth: AuthService,
     private router: Router,
+    private alerta: AlertasService
   ){}
 
   ngOnInit(){
@@ -34,7 +36,7 @@ export class AppComponent {
   // Função para limpar os dados do usuário e deslogar
   sair(){
     this.router.navigate(['/entrar'])
-    alert('Usuário deslogado com sucesso!')
+    this.alerta.showAlertSuccess('Usuário deslogado com sucesso!')
     environment.token = '';
     environment.foto = '';
     environment.id = 0;
