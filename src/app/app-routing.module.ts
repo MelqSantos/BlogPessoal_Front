@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { ComunidadeComponent } from './comunidade/comunidade.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'feed', component: FeedComponent},
   {path: 'temas', component: TemasComponent},
+  {path: 'comunidade', component: ComunidadeComponent},
 
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},

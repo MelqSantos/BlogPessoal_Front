@@ -40,6 +40,10 @@ export class AuthService {
   return this.http.get<User>(`https://ms-blogpessoal.herokuapp.com/usuarios/${id}`, this.token)
   }
 
+  getAllUsers(): Observable<User[]>{
+    return this.http.get<User[]>('https://ms-blogpessoal.herokuapp.com/usuarios/listar', this.token)
+  }
+
   logado(){
     let ok: boolean = false
 
