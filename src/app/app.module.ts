@@ -14,6 +14,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 // import { HashLocationStrategy, LocationStrategy } from '@angular/common'; 
 
 // Componentes
@@ -62,7 +63,8 @@ import { ComunidadeComponent } from './comunidade/comunidade.component';
     MatTooltipModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [
   //   {

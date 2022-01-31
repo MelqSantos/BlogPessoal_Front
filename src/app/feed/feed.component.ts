@@ -26,6 +26,13 @@ export class FeedComponent implements OnInit {
   
   listaTemas: Tema[]
   listaPostagens: Postagem[]
+  
+  // Order pipe
+  key = 'data'
+  reverse = true
+
+  tituloPost: string
+  descTema: string
 
   constructor(
     private router: Router,
@@ -84,6 +91,31 @@ export class FeedComponent implements OnInit {
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
+  }
+
+  findByTituloPostagem(){
+    
+    if(this.tituloPost == ""){
+      this.getAllPostagens()
+    } else{
+      
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+        this.listaPostagens = resp
+      })
+    }
+
+  }
+
+  findByTema(){
+    if(this.descTema == ""){
+      this.getAllTemas()
+    } else{
+
+      this.temaService.getByNomeTema(this.descTema).subscribe((resp: Tema[]) => {
+        this.listaTemas = resp
+
+      })
+    }
   }
   
 }

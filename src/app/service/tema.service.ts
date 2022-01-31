@@ -25,6 +25,10 @@ export class TemaService {
     return this.http.get<Tema>(`https://ms-blogpessoal.herokuapp.com/temas/${id}`, this.token)
   }
 
+  getByNomeTema(descricao: string):Observable<Tema[]>{
+    return this.http.get<Tema[]>(`https://ms-blogpessoal.herokuapp.com/temas/descricao/${descricao}`, this.token)
+  }
+
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('https://ms-blogpessoal.herokuapp.com/temas', tema, this.token)
   }
