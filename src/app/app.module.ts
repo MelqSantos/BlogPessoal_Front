@@ -31,6 +31,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { AlertasComponent } from './alertas/alertas.component';
 import { ComunidadeComponent } from './comunidade/comunidade.component';
+import { SobreComponent } from './sobre/sobre.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { ComunidadeComponent } from './comunidade/comunidade.component';
     UserEditComponent,
     AlertasComponent,
     ComunidadeComponent,
+    SobreComponent,
   ],
   imports: [
     BrowserModule,

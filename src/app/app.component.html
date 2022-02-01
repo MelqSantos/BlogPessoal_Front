@@ -26,7 +26,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a routerLink="/sobre">
                     <i class="far fa-question-circle mx-2"></i>Sobre</a>
             </li>
             <li>
@@ -54,7 +54,7 @@
     <!-- Page Content  -->
     <div id="content">
 
-        <nav *ngIf='auth.logado()' class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav *ngIf='auth.logado()' class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
 
                 <button (click)='toggle()' type="button" id="sidebarCollapse" class="btn btn-info">

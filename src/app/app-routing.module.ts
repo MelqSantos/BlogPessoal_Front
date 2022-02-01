@@ -9,6 +9,7 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
+import { SobreComponent } from './sobre/sobre.component';
 import { TemasComponent } from './temas/temas.component';
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'feed', component: FeedComponent},
   {path: 'temas', component: TemasComponent},
   {path: 'comunidade', component: ComunidadeComponent},
+  {path: 'sobre', component: SobreComponent},
 
   {path: 'tema-edit/:id', component: TemaEditComponent},
   {path: 'tema-delete/:id', component: TemaDeleteComponent},
